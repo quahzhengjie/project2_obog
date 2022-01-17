@@ -1,0 +1,36 @@
+<body>
+  <nav
+    class="navbar navbar-expand-lg navbar-dark"
+    style="background-color: black"
+  >
+    <a class="navbar-brand" href="/"
+      ><img src ="OBOG_LOGO.jpg"  width="50" height="50"></i
+    ></a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbarNavAltMarkup"
+      aria-controls="navbarNavAltMarkup"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-item nav-link active" href="/login">Log in </a>
+        <a class="nav-item nav-link" href="/registration"
+          >Register for event <br /></a>
+        <!-- Will need to update to see how we can parse current user instead of !-->
+        <a class="nav-item nav-link" href="/dashboard/1">USER DASHBOARD</a>
+        <a class="nav-item nav-link" href="/">ABOUT OBOG</a>
+        <form action="/logout?_method=POST" method="POST">
+          <button type="submit" class="btn btn-outline-light btn btn-md">
+            CLICK HERE TO LOG OUT
+          </button>
+        </form>
+      </div>
+    </div>
+  </nav>
+</body>

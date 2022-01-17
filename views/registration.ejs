@@ -1,0 +1,168 @@
+<%- include('partials/head') %> 
+
+  <nav
+    class="navbar navbar-expand-lg navbar-dark"
+    style="background-color: black"
+  >
+    <a class="navbar-brand" href="/"
+      ><img src ="OBOG_LOGO.jpg"  width="50" height="50"></i
+    ></a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbarNavAltMarkup"
+      aria-controls="navbarNavAltMarkup"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-item nav-link" href="/login">Log in </a>
+        <a class="nav-item nav-link active" href="/registration"
+          >Register for event <br /></a>
+        <!-- Will need to update to see how we can parse current user instead of !-->
+        <a class="nav-item nav-link" href="/dashboard/1">User Dashboard</a>
+         <a class="nav-item nav-link" href="/registeredevent/1/photos">Photo Album</a>
+        <a class="nav-item nav-link" href="/">ABOUT OBOG</a>
+        <form action="/logout?_method=POST" method="POST">
+          <button type="submit" class="btn btn-outline-light btn btn-md">
+            log out
+          </button>
+        </form>
+      </div>
+    </div>
+  </nav>
+<div class="container entry-form">
+  <h2>Register for Event</h2>
+  <p>We have many exciting programmes waiting for you!</p>
+  <div
+    id="carouselExampleIndicators"
+    class="carousel slide"
+    data-ride="carousel"
+  >
+    <ol class="carousel-indicators">
+      <li
+        data-target="#carouselExampleIndicators"
+        data-slide-to="0"
+        class="active"
+      ></li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <div class="d-flex justify-content-center">
+          <img
+            src="https://scontent.fsin9-1.fna.fbcdn.net/v/t39.30808-6/p600x600/270304824_116004847607884_3926255731841840980_n.png?_nc_cat=108&ccb=1-5&_nc_sid=730e14&_nc_ohc=xNBwu-ythx4AX80dmzF&_nc_oc=AQnfk7vTflbRnZch4MRhGU2ABUmy0i0V-pWiDsAaYbEgIHnj5WoDUXksF1SdqSTYEwc&_nc_ht=scontent.fsin9-1.fna&oh=00_AT9IOQVt-Pe8aQKgop-EZLKdriyn2niY7UndI7oyQoc1bw&oe=61E86512"
+            alt="First slide"
+          />
+        </div>
+      </div>
+      <div class="carousel-item">
+        <div class="d-flex justify-content-center">
+          <img
+            src="https://scontent.fsin9-2.fna.fbcdn.net/v/t39.30808-6/271010918_116004837607885_82230363129906333_n.png?_nc_cat=106&ccb=1-5&_nc_sid=730e14&_nc_ohc=wkEN6w7-zzMAX-tFqVL&_nc_ht=scontent.fsin9-2.fna&oh=00_AT90kBp3JiZFzKxd86MFzFQxv5TMqkNQjzHDI4CD7SXuPQ&oe=61E88545"
+            alt="Second slide"
+            height="600"
+          />
+        </div>
+      </div>
+      <div class="carousel-item">
+        <div class="d-flex justify-content-center">
+          <img
+            class="d-block w-100"
+            src="https://scontent.fsin9-1.fna.fbcdn.net/v/t39.30808-6/268397026_111849634690072_8233385590529038356_n.png?_nc_cat=104&ccb=1-5&_nc_sid=730e14&_nc_ohc=OuCjQpBMnNwAX9dt7lr&_nc_ht=scontent.fsin9-1.fna&oh=00_AT9SNQd96BWD5LlxMYXKlrJk1nicnEPYWjp1sfIPxjxGPw&oe=61E8399C"
+            alt="Third slide"
+            height="600"
+            width="600"
+          />
+        </div>
+      </div>
+    </div>
+    <a
+      class="carousel-control-prev"
+      href="#carouselExampleIndicators"
+      role="button"
+      data-slide="prev"
+    >
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a
+      class="carousel-control-next"
+      href="#carouselExampleIndicators"
+      role="button"
+      data-slide="next"
+    >
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+
+  <!-- FORM -->
+  <br /><br />
+  <div class="row justify-content-center align-items-center">
+    <div class="col-12 col-md-10">
+      <!-- This states the Action of the FORM, which is register for EVENTs via the POST method-->
+      <form class="entry-form-container" action="/registration" method="POST">
+        <div class="row">
+          <!-- Text Input -->
+          <div class="col">
+            <div class="form-group">
+              <label for="instrument"
+                >Instrument: <small>(ONE INSTRUMENT)</small></label
+              >
+              <input
+                class="form-control"
+                name="instrument"
+                id="instrument"
+                style="text-transform: uppercase"
+              />
+            </div>
+          </div>
+
+          <!-- DATE -->
+          <div class="col">
+            <div class="form-group">
+              <label for="date">Date of registration: </label>
+              <input
+                class="form-control"
+                type="date"
+                name="date"
+                id="date"
+                min="2015/01/01"
+              />
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="row">
+            <div class="col-8 justify-content-start">
+              <label for="obogevents_id">Availability for: </label>
+              <select
+                class="form-control"
+                name="obogevents_id"
+                id="obogevents_id"
+              >
+                <% OBOGEVENTS.forEach((type) => { %>
+                <option value="<%= type.id %>"><%= type.name %></option>
+                <% }) %>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <br /><br />
+        <button type="submit" class="btn btn-secondary btn-block">
+          Submit
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<%- include ('partials/footer') %>

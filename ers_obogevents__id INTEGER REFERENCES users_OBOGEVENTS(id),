@@ -1,0 +1,18 @@
+                 List of relations
+ Schema |       Name        | Type  |    Owner     
+--------+-------------------+-------+--------------
+ public | behaviour         | table | quahzhengjie
+ public | categories        | table | quahzhengjie
+ public | cats              | table | quahzhengjie
+ public | comments          | table | quahzhengjie
+ public | meals             | table | quahzhengjie
+ public | notes             | table | quahzhengjie
+ public | notes_behaviour   | table | quahzhengjie
+ public | obogevents        | table | quahzhengjie
+ public | recipe_categories | table | quahzhengjie
+ public | recipes           | table | quahzhengjie
+ public | species           | table | quahzhengjie
+ public | users             | table | quahzhengjie
+ public | users_obogevents  | table | quahzhengjie
+(13 rows)
+

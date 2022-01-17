@@ -1,0 +1,59 @@
+<%- include('partials/head') %>
+<nav
+    class="navbar navbar-expand-lg navbar-dark"
+    style="background-color: black"
+  >
+    <a class="navbar-brand" href="/"
+      ><img src ="/OBOG_LOGO.jpg"  width="50" height="50"></i
+    ></a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbarNavAltMarkup"
+      aria-controls="navbarNavAltMarkup"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-item nav-link" href="/login">Log in </a>
+        <a class="nav-item nav-link" href="/registration"
+          >Register for event <br /></a>
+        <!-- Will need to update to see how we can parse current user instead of !-->
+        <a class="nav-item nav-link" href="/dashboard/1">User Dashboard</a>
+         <a class="nav-item nav-link" href="/registeredevent/1/photos">Photo Album</a>
+        <a class="nav-item nav-link" href="/">ABOUT OBOG</a>
+        <form action="/logout?_method=POST" method="POST">
+          <button type="submit" class="btn btn-outline-light btn btn-md">
+            log out
+          </button>
+        </form>
+      </div>
+    </div>
+  </nav>
+
+<div class="container landing-page">
+  <h2>All Events</h2>
+  <p>You have registered for will appear here</p>
+  <div class="container" style="height: 100vh; padding: 40px">
+    <div class="row">
+      <% for (let i = 0; i < EventInfo.length; i += 1) { %>
+      <div class="col-sm-6 col-md-4">
+        <div class="card" style="margin: 10px">
+          <img class="card-img-top" src="/obog<%= i + 1 %>.jpg" />
+          <div class="card-body">
+            <h5 class="card-title"><a href="/registeredevent/photos/<%= i + 1 %>"> <%= EventInfo[i].name %></a></h5>
+             <p class="card-text"><%= EventInfo[i].date %></p>
+            <p class="card-text"><%= EventInfo[i].instrument %></p>
+          </div>
+        </div>
+      </div>
+      <% } %>
+    </div>
+  </div>
+
+  <%- include ('partials/footer') %>
+</div>
